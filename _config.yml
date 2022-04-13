@@ -1,58 +1,121 @@
-remote_theme: chrisrhymes/mere-blog-theme
-# Site Settings
-title: Mere Blog Theme
-tagline: Mere Blog Theme
-email: your-email@domain.com
-description: >
-  The demo site for Mere Blog Theme, made for Jekyll and GitHub pages websites
-baseurl: "/mere-blog-theme"
-url: "https://www.csrhymes.com"
+# Site settings
+title: 特的日常
+SEOTitle: 特的日常
+header-img: img/home-bg-art.jpg
+email: lante0903@icloud.com
+description: "@wblearn,日常航拍！"
+keyword: "wblearn, @wblearn, wblearn的博客,wblearn Blog, 博客, 个人网站, 互联网"
+url: "http://wblearn.github.io/"              # your host, for absolute URL
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+
+
+
+# SNS settings
+RSS: false
+weibo_username:     wudalanggd
+csdn_username:     wudalang_gd
+github_username:    wblearn
+#twitter_username:  wblearn
+jianshu_username:  48599dc7ef1b
+sv_username: study-video
+# linkedin_username:  firstname-lastname-idxxxx
+
+
+
+# Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+highlighter: rouge
 permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
-paginate: 6
-paginate_path: "/page:num"
 
-plugins:
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jekyll-feed
-  - jekyll-seo-tag
-  - kramdown
-  - rouge
 
-exclude:
-  - Gemfile
-  - clean-theme.gemspec
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
 
-livereload: true
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+
+# Disqus settings
+#disqus_username: _your_disqus_short_name_
+
+# Duoshuo settings
+duoshuo_username: wblearnblog
+# Share component is depend on Comment so we can NOT use share only.
+duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+
+
+# LiveRe setttings
+# You can get your uid from https://livere.com/insight/myCode (General web site)
+livere_uid: MTAyMC8yODkzOC81NTA3
+
+# Analytics settings
+# Baidu Analytics 
+# ba_track_id: [your track id]
+
+# Google Analytics
+ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+ga_domain: wblearn.github.io
+
+
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "不要让任何事情成为你不去学习的理由！" 
+sidebar-avatar: /img/avatar-wb.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
 
 sass:
-  style: compressed
-  source_dir: _sass
-
+  sass_dir: /assets/_sass
+  style: :compressed
+collections:
+  videos:
+    output: true
+    permalink: /:path/
 defaults:
   -
     scope:
-      path: ""
-      type: "posts"
+      path: ''
+      type: posts
     values:
-      author: "C.S. Rhymes"
       layout: post
-      image: /img/home.jpg
-      show_sidebar: true
   -
     scope:
-      path: ""
-      type: "authors"
+      path: ''
+      type: videos
     values:
-      layout: "author"
+      layout: video
 
-collections:
-  authors:
-    output: true
+# Friends
+friends: [
+    {
+        title: "wblearn的微博",
+        href: "http://weibo.com/wudalanggd"
+    },{
+        title: "study video",
+        href: "https://wblearn.github.io/study-video"
+    }
+]
